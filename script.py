@@ -54,22 +54,22 @@ def search_port(target_host):
     print("**" * 30)
     print(f"Total {count} Open Port Scanned in {round((time() - start),3)} Seconds")
 
-print("1: Search a range of Port")
-print("2: Scan All Port")
+print("1: Scan a range of Ports")
+print("2: Scan all ports")
 option=int(input("Please Choose: "))
 print("\n\n")
 
 if(option==1):
-    target_host = input("Please Enter target_host IP/URL: ")
+    target_host = input("Please Enter target IP/URL: ")
     port_range = input("Please Enter Port range (x-y): ").split("-")
     if(target_host=="" or port_range==""):
-        print("Missing required fields")
+        print("Missing required field(s)")
     else:
         scan_port(target_host,port_range)
 elif(option==2):
-    target_host = input("Please Enter target_host IP/URL: ")
+    target_host = input("Please Enter target IP/URL: ")
     if(target_host==""):
-        print("Missing required fields")
+        print("Missing required field")
     else:
         search_port(target_host)
 else:
